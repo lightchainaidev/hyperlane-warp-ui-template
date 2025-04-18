@@ -1,4 +1,4 @@
-import { IRegistry, chainMetadata as publishedChainMetadata } from '@hyperlane-xyz/registry';
+import { IRegistry } from '@hyperlane-xyz/registry';
 import {
   ChainMap,
   ChainMetadata,
@@ -30,13 +30,15 @@ export async function assembleChainMetadata(
   const filesystemMetadata = result.data as ChainMap<ChainMetadata>;
 
   let registryChainMetadata: ChainMap<ChainMetadata>;
-  if (config.registryUrl) {
-    logger.debug('Using custom registry metadata from:', config.registryUrl);
-    registryChainMetadata = await registry.getMetadata();
-  } else {
-    logger.debug('Using default published registry');
-    registryChainMetadata = publishedChainMetadata;
-  }
+  // if (config.registryUrl) {
+  //   logger.debug('Using custom registry metadata from:', config.registryUrl);
+  //   registryChainMetadata = await registry.getMetadata();
+  // } else {
+  //   logger.debug('Using default published registry');
+  //   registryChainMetadata = publishedChainMetadata;
+  // }
+
+  registryChainMetadata = {};
 
   // Filter out chains that are not in the tokens config
   registryChainMetadata = objFilter(registryChainMetadata, (c, m): m is ChainMetadata =>

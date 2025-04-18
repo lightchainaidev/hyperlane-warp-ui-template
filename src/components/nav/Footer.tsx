@@ -19,7 +19,7 @@ const footerLinks: FooterLink[] = [
   { title: 'Privacy', url: links.privacyPolicy, external: true },
   { title: 'Discord', url: links.discord, external: true, icon: <DiscordIcon color="#fff" /> },
   { title: 'Explorer', url: links.explorer, external: true },
-  { title: 'Bounty', url: links.bounty, external: true },
+  { title: 'Link', url: links.bounty, external: true },
   { title: 'Github', url: links.github, external: true, icon: <GithubIcon color="#fff" /> },
 ];
 
@@ -37,6 +37,7 @@ export function Footer() {
 }
 
 function FooterLogo() {
+  return <div></div>;
   return (
     <div className="flex items-center justify-center">
       <div className="ml-2 h-12 w-12 sm:h-14 sm:w-14">
